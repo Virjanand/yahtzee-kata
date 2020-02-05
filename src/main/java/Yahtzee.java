@@ -5,7 +5,7 @@ public class Yahtzee {
         return number == 1;
     }
 
-    public int score(List<Integer> rolls) {
+    public int score(List<Integer> rolls, String category) {
         return rolls.stream()
                 .filter(Yahtzee::ones)
                 .mapToInt(Integer::intValue)

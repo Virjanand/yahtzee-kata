@@ -18,15 +18,20 @@ public class YahtzeeTest {
 
     @Test
     void oneOneInCategoryOnes_Score1() {
-        assertRollsInCategoryGiveScore(asList(1, 2, 3, 4, 5), 1);
+        assertRollsInCategoryGiveScore(asList(1, 2, 3, 4, 5), 1, "Ones");
     }
 
     @Test
     void twoOnesInCategoryOnes_Score2() {
-        assertRollsInCategoryGiveScore(asList(1, 1, 3, 4, 5), 2);
+        assertRollsInCategoryGiveScore(asList(1, 1, 3, 4, 5), 2, "Ones");
     }
 
-    private AbstractIntegerAssert<?> assertRollsInCategoryGiveScore(List<Integer> rolls, int score) {
-        return assertThat(yahtzee.score(rolls)).isEqualTo(score);
+    @Test
+    void oneTwoInCategoryTwos_Score2() {
+        assertRollsInCategoryGiveScore(asList(1, 2, 3, 4, 5), 2, "Twos");
+    }
+
+    private AbstractIntegerAssert<?> assertRollsInCategoryGiveScore(List<Integer> rolls, int score, String category) {
+        return assertThat(yahtzee.score(rolls, category)).isEqualTo(score);
     }
 }
