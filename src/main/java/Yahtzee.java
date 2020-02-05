@@ -9,6 +9,6 @@ public class Yahtzee {
         return rolls.stream()
                 .filter(Yahtzee::ones)
                 .mapToInt(Integer::intValue)
-                .findAny().orElse(0);
+                .sum();
     }
 }
