@@ -10,4 +10,10 @@ public class YahtzeeTest {
         Yahtzee yahtzee = new Yahtzee();
         assertThat(yahtzee.score(asList(1, 2, 3, 4, 5))).isEqualTo(1);
     }
+
+    @Test
+    void twoOnesInCategoryOnes_Score2() {
+        Yahtzee yahtzee = new Yahtzee();
+        assertThat(yahtzee.score(asList(1, 1, 3, 4, 5))).isEqualTo(2);
+    }
 }
