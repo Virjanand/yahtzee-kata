@@ -2,6 +2,6 @@ import java.util.List;
 
 public class Yahtzee {
     public int score(List<Integer> asList) {
-        return 0;
+        return 1;
     }
 }
