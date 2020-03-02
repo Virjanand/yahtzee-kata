@@ -3,17 +3,21 @@ package categories;
 import java.util.List;
 
 public class NumberCategory {
-    public NumberCategory() {
+
+    private int number;
+
+    public NumberCategory(int number) {
+        this.number = number;
     }
 
-    public int calculateScoreForNumber(List<Integer> rolls, int number) {
+    public int calculateScoreForNumber(List<Integer> rolls) {
         return rolls.stream()
-                .filter(roll -> numberMatches(roll, number))
+                .filter(this::rollMatchesNumber)
                 .mapToInt(Integer::intValue)
                 .sum();
     }
 
-    public static boolean numberMatches(Integer number, int matchingNumber) {
-        return number == matchingNumber;
+    public boolean rollMatchesNumber(Integer roll) {
+        return roll == number;
     }
 }

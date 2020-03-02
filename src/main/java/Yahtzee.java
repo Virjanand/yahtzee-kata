@@ -3,12 +3,14 @@ import categories.NumberCategory;
 import java.util.List;
 
 public class Yahtzee {
-    private final NumberCategory numberCategory = new NumberCategory();
+    private NumberCategory numberCategory;
 
     public int score(List<Integer> rolls, String category) {
         if (category.equals("Twos")) {
-            return numberCategory.calculateScoreForNumber(rolls, 2);
+            numberCategory = new NumberCategory(2);
+            return numberCategory.calculateScoreForNumber(rolls);
         }
-        return numberCategory.calculateScoreForNumber(rolls, 1);
+        numberCategory = new NumberCategory(1);
+        return numberCategory.calculateScoreForNumber(rolls);
     }
 }
