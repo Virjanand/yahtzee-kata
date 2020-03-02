@@ -3,15 +3,14 @@ import java.util.List;
 public class Yahtzee {
     public int score(List<Integer> rolls, String category) {
         if (category.equals("Twos")) {
-            return rolls.stream()
-                    .filter(number -> numberMatches(number, 2))
-                    .mapToInt(Integer::intValue)
-                    .sum();
-
+            return calculateScoreForNumber(rolls, 2);
         }
+        return calculateScoreForNumber(rolls, 1);
+    }
 
+    private int calculateScoreForNumber(List<Integer> rolls, int number) {
         return rolls.stream()
-                .filter(number -> numberMatches(number, 1))
+                .filter(roll -> numberMatches(roll, number))
                 .mapToInt(Integer::intValue)
                 .sum();
     }
