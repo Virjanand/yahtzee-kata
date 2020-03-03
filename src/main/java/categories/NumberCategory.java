@@ -17,7 +17,7 @@ public class NumberCategory {
                 .sum();
     }
 
-    public boolean rollMatchesNumber(Integer roll) {
+    private boolean rollMatchesNumber(Integer roll) {
         return roll == number;
     }
 }

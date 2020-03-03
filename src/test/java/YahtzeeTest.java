@@ -1,3 +1,4 @@
+import categories.NumberCategory;
 import org.assertj.core.api.AbstractIntegerAssert;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -18,20 +19,20 @@ public class YahtzeeTest {
 
     @Test
     void oneOneInCategoryOnes_Score1() {
-        assertRollsInCategoryGiveScore(asList(1, 2, 3, 4, 5), 1, "Ones");
+        assertRollsInCategoryGiveScore(asList(1, 2, 3, 4, 5), 1, new NumberCategory(1));
     }
 
     @Test
     void twoOnesInCategoryOnes_Score2() {
-        assertRollsInCategoryGiveScore(asList(1, 1, 3, 4, 5), 2, "Ones");
+        assertRollsInCategoryGiveScore(asList(1, 1, 3, 4, 5), 2, new NumberCategory(1));
     }
 
     @Test
     void oneTwoInCategoryTwos_Score2() {
-        assertRollsInCategoryGiveScore(asList(1, 2, 3, 4, 5), 2, "Twos");
+        assertRollsInCategoryGiveScore(asList(1, 2, 3, 4, 5), 2, new NumberCategory(2));
     }
 
-    private AbstractIntegerAssert<?> assertRollsInCategoryGiveScore(List<Integer> rolls, int score, String category) {
+    private AbstractIntegerAssert<?> assertRollsInCategoryGiveScore(List<Integer> rolls, int score, NumberCategory category) {
         return assertThat(yahtzee.score(rolls, category)).isEqualTo(score);
     }
 }
