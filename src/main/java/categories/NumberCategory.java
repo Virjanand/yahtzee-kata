@@ -2,7 +2,7 @@ package categories;
 
 import java.util.List;
 
-public class NumberCategory {
+public class NumberCategory implements Category{
 
     private int number;
 
