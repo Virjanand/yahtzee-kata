@@ -1,5 +1,6 @@
 import categories.Category;
 import categories.NumberCategory;
+import categories.PairCategory;
 import org.assertj.core.api.AbstractIntegerAssert;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -31,6 +32,11 @@ public class YahtzeeTest {
     @Test
     void oneTwoInCategoryTwos_Score2() {
         assertRollsInCategoryGiveScore(asList(1, 2, 3, 4, 5), 2, new NumberCategory(2));
+    }
+
+    @Test
+    void twoTwosInCategoryPair_Score4() {
+        assertRollsInCategoryGiveScore(asList(1, 2, 3, 2, 5), 4, new PairCategory());
     }
 
     private AbstractIntegerAssert<?> assertRollsInCategoryGiveScore(List<Integer> rolls, int score, Category category) {
