@@ -50,11 +50,6 @@ public class YahtzeeTest {
         assertRollsInCategoryGiveScore(asList(1, 1, 3, 3, 5), 1+1+3+3, new TwoPairCategory());
     }
 
-    @Test
-    void noPairInCategoryPair_Score0() {
-        assertRollsInCategoryGiveScore(asList(1, 2, 3, 4, 5), 0, new PairCategory());
-    }
-
     private AbstractIntegerAssert<?> assertRollsInCategoryGiveScore(List<Integer> rolls, int score, Category category) {
         return assertThat(yahtzee.score(rolls, category)).isEqualTo(score);
     }
