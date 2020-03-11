@@ -36,9 +36,9 @@ public class YahtzeeTest {
                 Arguments.of(asList(1, 2, 3, 4, 5), new NumberCategory(1), 1),
                 Arguments.of(asList(1, 1, 3, 4, 5), new NumberCategory(1), 1 + 1),
                 Arguments.of(asList(1, 2, 3, 4, 5), new NumberCategory(2), 2),
-                Arguments.of(asList(1, 2, 3, 2, 5), new PairCategory(), 2 + 2),
+                Arguments.of(asList(1, 1, 2, 3, 4), new PairCategory(), 1 + 1),
                 Arguments.of(asList(1, 2, 3, 4, 5), new PairCategory(), 0),
-                Arguments.of(asList(1, 1, 3, 3, 5), new TwoPairCategory(), 1+1+3+3)
+                Arguments.of(asList(1, 1, 2, 2, 5), new TwoPairCategory(), 1+1+2+2)
         );
     }
 
