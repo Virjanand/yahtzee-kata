@@ -20,4 +20,9 @@ public class NumberCategory implements Category{
     private boolean rollMatchesNumber(Integer roll) {
         return roll == number;
     }
+
+    @Override
+    public String toString() {
+        return "Number(" + number + ")";
+    }
 }

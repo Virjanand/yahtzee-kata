@@ -9,4 +9,8 @@ public class PairCategory implements Category {
                 .max().orElse(0);
     }
 
+    @Override
+    public String toString() {
+        return "Pair";
+    }
 }

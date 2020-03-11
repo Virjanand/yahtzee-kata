@@ -8,4 +8,9 @@ public class TwoPairCategory implements Category {
         return 2 * RollCombinationUtil.occurencesOfPairs(rolls)
                 .sum();
     }
+
+    @Override
+    public String toString() {
+        return "TwoPair";
+    }
 }
