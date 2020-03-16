@@ -6,10 +6,11 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class RollCombinationUtil {
-    static Stream<Integer> occurencesOfPairs(List<Integer> rolls) {
+
+    static Stream<Integer> occurrences(List<Integer> rolls, int numberOfOccurrences) {
         return rolls.stream()
                 .collect(Collectors.groupingBy(Integer::intValue, Collectors.counting())).entrySet().stream()
-                .filter(entry -> entry.getValue() == 2)
+                .filter(entry -> entry.getValue() == numberOfOccurrences)
                 .map(Map.Entry::getKey);
     }
 }

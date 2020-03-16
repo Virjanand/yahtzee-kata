@@ -7,7 +7,7 @@ import static java.util.stream.Collectors.toList;
 public class TwoPairCategory implements Category {
     @Override
     public int calculateScoreForNumber(List<Integer> rolls) {
-        List<Integer> occurences = RollCombinationUtil.occurencesOfPairs(rolls).collect(toList());
+        List<Integer> occurences = RollCombinationUtil.occurrences(rolls, 2).collect(toList());
         if (occurences.size() == 2)
         return 2 * occurences.stream().mapToInt(Integer::intValue)
                 .sum();
