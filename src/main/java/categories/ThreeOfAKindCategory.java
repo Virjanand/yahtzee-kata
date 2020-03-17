@@ -4,14 +4,12 @@ import java.util.List;
 
 public class ThreeOfAKindCategory implements Category{
     @Override
-    public int calculateScoreForNumber(List<Integer> rolls) {
-        return 3 * RollCombinationUtil.occurrences(rolls, 3)
-                .mapToInt(Integer::intValue)
-                .max().orElse(0);
+    public int scoreForRollOf5Dice(List<Integer> rolls) {
+        return RollCombinationUtil.scoreForNumberOfOccurrences(rolls, 3);
     }
 
     @Override
     public String toString() {
-        return "ThreeOfAKind";
+        return this.getClass().getSimpleName();
     }
 }

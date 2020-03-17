@@ -4,10 +4,8 @@ import java.util.List;
 
 public class PairCategory implements Category {
     @Override
-    public int calculateScoreForNumber(List<Integer> rolls) {
-        return 2 * RollCombinationUtil.occurrences(rolls, 2)
-                .mapToInt(Integer::intValue)
-                .max().orElse(0);
+    public int scoreForRollOf5Dice(List<Integer> rolls) {
+        return RollCombinationUtil.scoreForNumberOfOccurrences(rolls, 2);
     }
 
     @Override

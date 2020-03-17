@@ -13,4 +13,10 @@ public class RollCombinationUtil {
                 .filter(entry -> entry.getValue() == numberOfOccurrences)
                 .map(Map.Entry::getKey);
     }
+
+    static int scoreForNumberOfOccurrences(List<Integer> rolls, int numberOfOccurrences) {
+        return numberOfOccurrences * occurrences(rolls, numberOfOccurrences)
+                .mapToInt(Integer::intValue)
+                .max().orElse(0);
+    }
 }

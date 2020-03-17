@@ -10,7 +10,7 @@ public class NumberCategory implements Category{
         this.number = number;
     }
 
-    public int calculateScoreForNumber(List<Integer> rolls) {
+    public int scoreForRollOf5Dice(List<Integer> rolls) {
         return rolls.stream()
                 .filter(this::rollMatchesNumber)
                 .mapToInt(Integer::intValue)

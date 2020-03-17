@@ -4,5 +4,6 @@ import java.util.List;
 
 public interface Category {
 
-    int calculateScoreForNumber(List<Integer> rolls);
+    int scoreForRollOf5Dice(List<Integer> rolls);
+
 }
