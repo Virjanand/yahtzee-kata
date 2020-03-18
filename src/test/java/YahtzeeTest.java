@@ -38,7 +38,8 @@ public class YahtzeeTest {
                 Arguments.of(asList(1, 1, 2, 2, 5), new TwoPairCategory(), 1 + 1 + 2 + 2),
                 Arguments.of(asList(1, 1, 2, 2, 2), new TwoPairCategory(), 0),
                 Arguments.of(asList(1, 1, 1, 2, 2), new ThreeOfAKindCategory(), 1 + 1 + 1),
-                Arguments.of(asList(1, 1, 1, 1, 2), new FourOfAKindCategory(), 1 + 1 + 1 + 1)
+                Arguments.of(asList(1, 1, 1, 1, 2), new FourOfAKindCategory(), 1 + 1 + 1 + 1),
+                Arguments.of(asList(1, 2, 3, 4, 5), new SmallStraightCategory(), 1 + 2 + 3 + 4 + 5)
         );
     }
 
